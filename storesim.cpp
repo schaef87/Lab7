@@ -73,23 +73,20 @@ int main ()
 			timeArrived = custTemp;
 		}
 
+		k = rand() % 4;
 
-		k = minute%3;
-		if(k == 2) {
-			custQ.enqueue(minute);
+		if(k == 1 ){
 			numArrivals++;
-		} else if(k == 0){
-			custQ.enqueue(minute);
-			custQ.enqueue(minute);
+		} else if (k ==2){
 			numArrivals+=2;
-		} else {
-			numArrivals+=0;
+		}
+
+		for(int x = 0; x < numArrivals; x++){
+			custQ.enqueue(minute);
 		}
 		numArrivals=0;
+
 	}
-
-
-
 
 
 	// Print out simulation results
